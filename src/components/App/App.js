@@ -7,27 +7,21 @@ import {
 } from 'react-router-dom'
 import logo from '../../logo.svg';
 import './App.scss';
-import Home from "../Home/Home";
-import Login from "../Login/Login";
-import Register from "../Register/Register";
-import Navbar from "../Navbar/Navbar";
+import Home from "../Home";
+import SignIn from "../SignIn";
+import SignUp from "../SignUp";
+import Navbar from "../Navbar";
+import * as ROUTES from '../../constants/routes'
 
 function App() {
     return (
         <>
             <Router>
                 <Navbar/>
-
                 <Switch>
-                    <Route exact path='/'>
-                        <Home/>
-                    </Route>
-                    <Route path='/logowanie'>
-                        <Login/>
-                    </Route>
-                    <Route path='/rejestracja'>
-                        <Register/>
-                    </Route>
+                    <Route exact path={ROUTES.LANDING} component={Home}/>
+                    <Route path={ROUTES.SIGN_IN} component={SignIn}/>
+                    <Route path={ROUTES.SIGN_UP} component={SignUp} />
                 </Switch>
             </Router>
         </>

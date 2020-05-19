@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeHero from "../HomeHero/HomeHero";
+import HomeHero from "./HomeHero";
 
 function Home() {
     return (

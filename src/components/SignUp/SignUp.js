@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Register() {
+function SignUp() {
     return (
         <div>register</div>
     );
 }
 
-export default Register;
+export default SignUp;

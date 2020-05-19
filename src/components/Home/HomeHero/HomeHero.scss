@@ -1,10 +1,10 @@
-@import '../../scss/settings/colors';
-@import '../../scss/settings/fonts';
+@import '../../../scss/settings/colors';
+@import '../../../scss/settings/fonts';
 
 .page-hero {
   margin: 0;
   padding: 0;
-  background-image: url('../../assets/Home-Hero-Image.jpg');
+  background-image: url('../../../assets/Home-Hero-Image.jpg');
   background-position: -483px;
   background-size: contain;
   background-repeat: no-repeat;

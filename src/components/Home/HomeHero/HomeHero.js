@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
+import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
 import './HomeHero.scss'
 function HomeHero() {
     return (
