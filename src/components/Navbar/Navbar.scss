@@ -1,0 +1,52 @@
+@import '../../scss/settings/colors';
+@import '../../scss/settings/fonts';
+
+.navbar {
+  position: relative;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding-right: 140px;
+  margin-top: 40px;
+
+  a {
+    text-decoration: none;
+  }
+
+
+  .navbar-login {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 14px;
+    margin-bottom: 35px;
+    a {
+      color: $font-color-alt;
+      margin-left: 15px;
+      padding: 10px 10px;
+
+    }
+.register{
+  outline: 0.75px solid #FAD648;
+}
+    li {
+
+      display: inline-block;
+    }
+  }
+  .navbar-nav {
+    font-size: 18px;
+    display: inline-block;
+    list-style-type: none;
+    a,a:link, a:visited {
+      color: $font-color;
+      margin-left: 15px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    li {
+
+      display: inline-block;
+    }
+  }
+}
+
