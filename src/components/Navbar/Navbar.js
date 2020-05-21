@@ -29,7 +29,7 @@ const NavbarAuth = ({authUser})=> (
     <>
         <ul className='navbar-login'>
             <li>Witaj {authUser.authUser.email}</li>
-            <li><NavLink className='register'to={ROUTES.SIGN_IN}>Oddaj rzeczy</NavLink></li>
+            <li><NavLink className='register'to={ROUTES.APP_FORM}>Oddaj rzeczy</NavLink></li>
             <li><NavLink to={ROUTES.LANDING}>{<SignOutButton/>}</NavLink></li>
         </ul>
         <ul className='navbar-nav'>

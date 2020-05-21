@@ -31,7 +31,7 @@ console.dir(authUser);
             <Router>
                 <Navbar authUser={authUser}/>
                 <Switch>
-                    <Route exact path={ROUTES.LANDING} component={Home}/>
+                    <Route exact path={ROUTES.LANDING} render={(props) => <Home {...props} authUser={authUser}/>} />
                     <Route path={ROUTES.SIGN_IN} component={SignIn}/>
                     <Route path={ROUTES.SIGN_UP} component={SignUp} />
                 </Switch>

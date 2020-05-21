@@ -3,6 +3,9 @@ import {compose} from "recompose";
 import {withRouter} from "react-router-dom";
 import {withFirebase} from "../Firebase";
 import SignInForm from "./SignInForm";
+import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
+import './SignIn.scss'
+
 
 const SignInFormValidate = compose(
     withRouter,
@@ -12,7 +15,11 @@ const SignInFormValidate = compose(
 
 function SignIn() {
     return (
+        <div className='form-cnt'>
+            <h2 className='form-title'>Zaloguj się</h2>
+            <Decoration/>
         <SignInFormValidate/>
+        </div>
     );
 }
 

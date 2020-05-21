@@ -1,0 +1,23 @@
+@import 'src/scss/settings/colors';
+@import 'src/scss/settings/fonts';
+
+.form-cnt{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: calc(100vh - 118px);
+
+  .form-title{
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: $font-color;
+    font-family: $font-base;
+    font-weight: normal;
+  }
+
+  svg{
+    margin-bottom: 40px;
+  }
+}
