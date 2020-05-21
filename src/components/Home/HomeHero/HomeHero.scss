@@ -9,10 +9,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   width: 98%;
-  height: 100vh;
-  position: absolute;
+  height: calc(100vh - 108px);
   top: 0;
-
   z-index: -10;
   display: flex;
   flex-direction: row-reverse;

@@ -4,6 +4,7 @@ import {Link} from 'react-scroll'
 import './Navbar.scss'
 import * as ROUTES from '../../constants/routes'
 import SignOutButton from "../SignOut/SignOut";
+import {AuthUserContext} from '../Session'
 const activeStyle = {
 
     'outline': '0.75px solid #3C3C3C'
@@ -24,13 +25,15 @@ const NavbarNonAuth = () => (
         </>
 )
 
-const NavbarAuth = ({authUser})=> (
+const NavbarAuth = ()=> (
 
-    <>
+    <AuthUserContext.Consumer>
+        {authUser =>
+            <>
         <ul className='navbar-login'>
-            <li>Witaj {authUser.authUser.email}</li>
+            <li>Witaj {authUser.email}</li>
             <li><NavLink className='register'to={ROUTES.APP_FORM}>Oddaj rzeczy</NavLink></li>
-            <li><NavLink to={ROUTES.LANDING}>{<SignOutButton/>}</NavLink></li>
+            <NavLink to={ROUTES.SIGN_OUT}>{<SignOutButton/>}</NavLink>
         </ul>
         <ul className='navbar-nav'>
             <li><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
@@ -39,10 +42,15 @@ const NavbarAuth = ({authUser})=> (
             <li><Link>Fundacja i organizacje</Link></li>
             <li><Link>Kontakt</Link></li>
         </ul>
-   </>
+            </>}
+    </AuthUserContext.Consumer>
+
 )
-const Navbar = ({authUser}) => (
-<div className='navbar'>{authUser === null  ? <NavbarNonAuth /> : <NavbarAuth authUser={authUser}/>}</div>
+const Navbar = () => (
+
+<div className='navbar'><AuthUserContext.Consumer>
+    {authUser => authUser  ?  <NavbarAuth /> : <NavbarNonAuth />}</AuthUserContext.Consumer>
+</div>
 )
 
 

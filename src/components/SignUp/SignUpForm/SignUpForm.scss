@@ -1,71 +1,73 @@
 @import 'src/scss/settings/colors';
 @import 'src/scss/settings/fonts';
 
-.form {
+.form{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 385px;
+  width: 385px ;
   height: 235px;
-  margin-top: 60px;
+  margin-top:60px;
 
-  .error {
-    color: red;
+  .error{
+    color:red;
     font-size: 12px;
     text-align: center;
   }
-
-  form {
+  form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 40px 40px 0 40px;
+    margin-top: 60px;
     background-color: #F0F1F1;
 
-    label {
+    label{
       font-family: $font-base;
       font-size: 16px;
       font-weight: 600;
       color: $font-color;
+
       align-self: flex-start;
       margin-left: 30px;
 
 
     }
-
-    input {
-      width: 250px;
+    input{
+      width:250px;
       height: 60px;
       background-color: #F0F1F1;
       border: none;
       outline: none;
       border-bottom: 1px solid $font-color;
       margin-bottom: 30px;
-      font-family: $font-base;
+      font-family: $font-base ;
       font-size: 20px;
     }
 
-    .form-btns {
+    .form-btns{
       display: flex;
-      width: 100%;
+      padding-top: 40px;
+      width: 160%;
       justify-content: space-between;
+      background: #FFF;
 
-      button {
+      button{
         background-color: Transparent;
-        background-repeat: no-repeat;
+        background-repeat:no-repeat;
         border: none;
-        cursor: pointer;
+        cursor:pointer;
         overflow: hidden;
-        outline: none;
+        outline:none;
         font-family: $font-base;
         font-size: 18px;
         font-weight: normal;
         padding: 15px;
 
-      }
 
-      .signIn-btn {
+      }
+      .signIn-btn{
         border: 1px solid $font-color;
       }
     }

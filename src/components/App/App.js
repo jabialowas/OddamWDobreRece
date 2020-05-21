@@ -13,31 +13,28 @@ import SignUp from "../SignUp";
 import Navbar from "../Navbar";
 import * as ROUTES from '../../constants/routes'
 import {withFirebase} from "../Firebase";
+import {withAuthentication} from '../Session'
+import {SignOut} from "../SignOut/SignOut";
 
 
 function App(props) {
-    const [authUser,setAuthUser] = useState(null);
-console.dir(authUser);
-    useEffect(() => {
-        const listener = props.firebase.auth.onAuthStateChanged(authUser => {
-            authUser
-            ? setAuthUser({authUser})
-                : setAuthUser(null);
-        })
-        return () => {listener()};
-    },[])
+
+console.dir(props.authUser);
+
     return (
         <>
+
             <Router>
-                <Navbar authUser={authUser}/>
+                <Navbar/>
                 <Switch>
-                    <Route exact path={ROUTES.LANDING} render={(props) => <Home {...props} authUser={authUser}/>} />
+                    <Route exact path={ROUTES.LANDING} component={Home} />
                     <Route path={ROUTES.SIGN_IN} component={SignIn}/>
                     <Route path={ROUTES.SIGN_UP} component={SignUp} />
+                    <Route path={ROUTES.SIGN_OUT} component={SignOut} />
                 </Switch>
             </Router>
         </>
     );
 }
 
-export default withFirebase(App);
+export default withAuthentication(App);

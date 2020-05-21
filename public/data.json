@@ -1,0 +1,53 @@
+
+    {
+    "foundations": [
+        {
+            "id": "1",
+            "name": "Fundacja",
+            "description": "Description"
+        }, {
+            "id": "2",
+            "name": "Fundacja",
+            "description": "Description"
+        }, {
+            "id": "3",
+            "name": "Fundacja",
+            "description": "Description"
+        }, {
+            "id": "4",
+            "name": "Fundacja",
+            "description": "Description"
+        }],
+    "organizations": [
+
+        {
+            "id": "1",
+            "name": "Organizacja",
+            "description": "Description"
+        },  {
+            "id": "2",
+            "name": "Organizacja",
+            "description": "Description"
+        }, {
+            "id": "3",
+            "name": "Organizacja",
+            "description": "Description"
+        }, {
+            "id": "4",
+            "name": "Organizacja",
+            "description": "Description"
+        }, {
+            "id": "5",
+            "name": "Organizacja",
+            "description": "Description"
+        }, {
+            "id": "6",
+            "name": "Organizacja",
+            "description": "Description"
+        }, {
+            "id": "1",
+            "name": "Organizacja",
+            "description": "Description"
+        }
+    ]
+    }
