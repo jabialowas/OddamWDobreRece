@@ -11,16 +11,20 @@ import {
     scrollSpy,
     scroller
 } from "react-scroll";
+import HomeFourSteps from "./HomeFourSteps";
 
 function Home() {
     return (
         <>
             <HomeHero/>
             <HomeThreeColums/>
-            <Element name='whoWeHelp'>
-            <WhoWeHelp/>
+            <Element name='fourSteps'>
+                <HomeFourSteps/>
             </Element>
-            </>
+            <Element name='whoWeHelp'>
+                <WhoWeHelp/>
+            </Element>
+        </>
     );
 }
 

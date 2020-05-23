@@ -15,8 +15,7 @@ const HomeHero = () =>  {
                         <Decoration/>
                         <div className='page-hero-btns'>
                             {authUser ? <Link to={ROUTES.APP_FORM}>ODDAJ<br/>RZECZY</Link>: <Link to={ROUTES.SIGN_IN}>ODDAJ<br/>RZECZY</Link>}
-
-                            <a> ZORGANIZUJ<br/> ZBIÓRKĘ</a>
+                            {authUser ? <Link to={ROUTES.APP_FORM}>ZORGANIZUJ<br/>ZBIÓRKĘ</Link>: <Link to={ROUTES.SIGN_IN}>ZORGANIZUJ<br/>ZBIÓRKĘ</Link>}
                         </div>
                     </div>
                 </div>

@@ -27,13 +27,15 @@ const NavbarNonAuth = () => (
         </ul>
         <ul className='navbar-nav'>
             <li><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
-            <li><Link>O co chodzi?</Link></li>
+            <li><Link   to='fourSteps'
+                        spy={true}
+                        smooth={true}
+                        duration={500}>O co chodzi?</Link></li>
             <li><Link>O nas</Link></li>
             <li><Link
                 to='whoWeHelp'
                 spy={true}
                 smooth={true}
-                offset={-70}
                 duration={500}>Fundacja i organizacje</Link></li>
             <li><Link>Kontakt</Link></li>
         </ul>

@@ -1,0 +1,17 @@
+.steps-cnt{
+  width: 100%;
+  height: 625px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .steps-icon-cnt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 325px;
+    background-color: #F0F1F1;
+  }
+}
