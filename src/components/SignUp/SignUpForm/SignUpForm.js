@@ -41,7 +41,17 @@ function SignUpForm(props) {
 
             props.firebase
                 .doCreateUserWithEmailAndPassword(values.email, values.passwordOne)
-                .then(authUser => props.history.push(ROUTES.LANDING))
+                .then(authUser => {
+                    const email = values.email;
+                    return props.firebase
+                        .user(authUser.user.uid)
+                        .set({
+                            email
+                        });
+                })
+                    .then(()=>{
+                        props.history.push(ROUTES.LANDING);
+                    })
                 .catch(error => console.log(error));
             event.preventDefault();
         },

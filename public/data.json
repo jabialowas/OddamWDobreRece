@@ -1,53 +1,102 @@
+{
+    "siteInfo": {
+        "foundations": [
+            {
+                "id": "1",
+                "name": "Fundacja1",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
 
-    {
-    "foundations": [
-        {
-            "id": "1",
-            "name": "Fundacja",
-            "description": "Description"
-        }, {
-            "id": "2",
-            "name": "Fundacja",
-            "description": "Description"
-        }, {
-            "id": "3",
-            "name": "Fundacja",
-            "description": "Description"
-        }, {
-            "id": "4",
-            "name": "Fundacja",
-            "description": "Description"
-        }],
-    "organizations": [
+            },
+            {
+                "id": "2",
+                "name": "Fundacja2",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
 
-        {
-            "id": "1",
-            "name": "Organizacja",
-            "description": "Description"
-        },  {
-            "id": "2",
-            "name": "Organizacja",
-            "description": "Description"
-        }, {
-            "id": "3",
-            "name": "Organizacja",
-            "description": "Description"
-        }, {
-            "id": "4",
-            "name": "Organizacja",
-            "description": "Description"
-        }, {
-            "id": "5",
-            "name": "Organizacja",
-            "description": "Description"
-        }, {
-            "id": "6",
-            "name": "Organizacja",
-            "description": "Description"
-        }, {
-            "id": "1",
-            "name": "Organizacja",
-            "description": "Description"
-        }
-    ]
+            },
+            {
+                "id": "3",
+                "name": "Fundacja3",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "4",
+                "name": "Fundacja4",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            }
+        ],
+        "organizations": [
+            {
+                "id": "1",
+                "name": "Organizacja1",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "2",
+                "name": "Organizacja2",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "3",
+                "name": "Organizacja3",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "4",
+                "name": "Organizacja4",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "5",
+                "name": "Organizacja5",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "6",
+                "name": "Organizacja6",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "1",
+                "name": "Organizacja7",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            }
+        ],
+        "local": [
+            {
+                "id": "1",
+                "name": "Lokalna zbiórka1",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "2",
+                "name": "Lokalna zbiórka12",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "3",
+                "name": "Lokalna zbiórka13",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            },
+            {
+                "id": "4",
+                "name": "Lokalna zbiórka14",
+                "description": "Description",
+                "needs": "item1, item2, item3, item4"
+            }
+        ]
     }
+}

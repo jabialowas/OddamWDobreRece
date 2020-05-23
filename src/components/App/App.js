@@ -12,15 +12,11 @@ import SignIn from "../SignIn";
 import SignUp from "../SignUp";
 import Navbar from "../Navbar";
 import * as ROUTES from '../../constants/routes'
-import {withFirebase} from "../Firebase";
 import {withAuthentication} from '../Session'
 import {SignOut} from "../SignOut/SignOut";
 
 
-function App(props) {
-
-console.dir(props.authUser);
-
+function App() {
     return (
         <>
 

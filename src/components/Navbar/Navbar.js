@@ -1,10 +1,20 @@
 import React from 'react';
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
-import {Link} from 'react-scroll'
+import {
+    Link,
+    DirectLink,
+    Element,
+    Events,
+    animateScroll,
+    scrollSpy,
+    scroller
+} from "react-scroll";
 import './Navbar.scss'
 import * as ROUTES from '../../constants/routes'
 import SignOutButton from "../SignOut/SignOut";
 import {AuthUserContext} from '../Session'
+import WhoWeHelp from "../Home/WhoWeHelp/WhoWeHelp";
+
 const activeStyle = {
 
     'outline': '0.75px solid #3C3C3C'
@@ -19,7 +29,12 @@ const NavbarNonAuth = () => (
             <li><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
             <li><Link>O co chodzi?</Link></li>
             <li><Link>O nas</Link></li>
-            <li><Link>Fundacja i organizacje</Link></li>
+            <li><Link
+                to='whoWeHelp'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>Fundacja i organizacje</Link></li>
             <li><Link>Kontakt</Link></li>
         </ul>
         </>
