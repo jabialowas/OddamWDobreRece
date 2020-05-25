@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import Firebase from "../../Firebase";
 import {withFirebase} from "../../Firebase";
 import 'firebase/database'
-import './WhoWeHelp.scss'
+import './HomeWhoWeHelp.scss'
 import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
 
-function WhoWeHelp(props) {
+function HomeWhoWeHelp(props) {
     const [data, setData] = useState(false);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1)
@@ -58,6 +58,7 @@ function WhoWeHelp(props) {
                 </ul>
             )
         }
+
         //page numbers
         const pageNumbers = [];
         for (let i=0; i<Math.ceil(categoryData.length/ postPerPage); i++) {
@@ -112,4 +113,4 @@ function WhoWeHelp(props) {
     return null;
 }
 
-export default withFirebase(WhoWeHelp);
+export default withFirebase(HomeWhoWeHelp);

@@ -15,7 +15,7 @@ const SignInFormValidate = compose(
 
 function SignIn() {
     return (
-        <div className='form-cnt'>
+        <div className='signIn-cnt'>
             <h2 className='form-title'>Zaloguj się</h2>
             <Decoration/>
         <SignInFormValidate/>

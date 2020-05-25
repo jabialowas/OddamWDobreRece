@@ -1,7 +1,7 @@
 @import 'src/scss/settings/colors';
 @import 'src/scss/settings/fonts';
 
-.form{
+.signUp-form{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,17 +10,23 @@
   margin-top:60px;
 
   .error{
-    color:red;
+    margin-top: 5px;
+    margin-left: 30px;
+    color: red;
     font-size: 12px;
-    text-align: center;
+    text-align: left;
+    justify-self: flex-start;
+    align-self: flex-start;
+    font-weight: bold;
   }
   form{
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px 0 40px;
-    margin-top: 60px;
+    padding: 0 40px 0 40px;
+
     background-color: #F0F1F1;
 
     label{
@@ -28,7 +34,7 @@
       font-size: 16px;
       font-weight: 600;
       color: $font-color;
-
+      margin-top: 30px;
       align-self: flex-start;
       margin-left: 30px;
 
@@ -41,7 +47,7 @@
       border: none;
       outline: none;
       border-bottom: 1px solid $font-color;
-      margin-bottom: 30px;
+
       font-family: $font-base ;
       font-size: 20px;
     }
@@ -49,9 +55,11 @@
     .form-btns{
       display: flex;
       padding-top: 40px;
+      margin-top: 60px;
       width: 160%;
       justify-content: space-between;
       background: #FFF;
+
 
       button{
         background-color: Transparent;
@@ -62,7 +70,7 @@
         outline:none;
         font-family: $font-base;
         font-size: 18px;
-        font-weight: normal;
+        font-weight: lighter;
         padding: 15px;
 
 

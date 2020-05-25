@@ -13,7 +13,7 @@ import './Navbar.scss'
 import * as ROUTES from '../../constants/routes'
 import SignOutButton from "../SignOut/SignOut";
 import {AuthUserContext} from '../Session'
-import WhoWeHelp from "../Home/WhoWeHelp/WhoWeHelp";
+import WhoWeHelp from "../Home/HomeWhoWeHelp/HomeWhoWeHelp";
 
 const activeStyle = {
 
@@ -31,13 +31,19 @@ const NavbarNonAuth = () => (
                         spy={true}
                         smooth={true}
                         duration={500}>O co chodzi?</Link></li>
-            <li><Link>O nas</Link></li>
+            <li><Link to='aboutUs'
+                spy={true}
+                smooth={true}
+                duration={500}>O nas</Link></li>
             <li><Link
                 to='whoWeHelp'
                 spy={true}
                 smooth={true}
                 duration={500}>Fundacja i organizacje</Link></li>
-            <li><Link>Kontakt</Link></li>
+            <li><Link to='contact'
+                spy={true}
+                smooth={true}
+                duration={500}>Kontakt</Link></li>
         </ul>
         </>
 )

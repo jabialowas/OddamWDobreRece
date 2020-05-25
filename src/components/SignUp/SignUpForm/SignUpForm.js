@@ -57,10 +57,9 @@ function SignUpForm(props) {
         },
     });
     return (
-        <div className='form'>
+        <div className='signUp-form'>
             <form onSubmit={formik.handleSubmit}>
-                <label htmlFor='email'>Email<br/>{formik.errors.email ? <span
-                    className='error'>{formik.errors.email && formik.touched.email && formik.errors.email}</span> : ""}
+                <label htmlFor='email'>Email<br/>
                 </label>
                 <input
                     type="email"
@@ -70,9 +69,10 @@ function SignUpForm(props) {
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
                 />
+                {formik.errors.email ? <span
+                    className='error'>{formik.errors.email && formik.touched.email && formik.errors.email}</span> : ""}
 
-                <label htmlFor='passwordOne'>Hasło<br/>{formik.errors.passwordOne ? <span
-                    className='error'>{formik.errors.passwordOne && formik.touched.passwordOne && formik.errors.passwordOne}</span> : ""}
+                <label htmlFor='passwordOne'>Hasło<br/>
                 </label>
                 <input
                     type="password"
@@ -82,9 +82,10 @@ function SignUpForm(props) {
                     onBlur={formik.handleBlur}
                     value={formik.values.passwordOne}
                 />
+                {formik.errors.passwordOne ? <span
+                    className='error'>{formik.errors.passwordOne && formik.touched.passwordOne && formik.errors.passwordOne}</span> : ""}
 
-                <label htmlFor='passwordTwo'>Powtórz hasło<br/>{formik.errors.passwordTwo ? <span
-                    className='error'>{formik.errors.passwordTwo && formik.touched.passwordTwo && formik.errors.passwordTwo}</span> : ""}
+                <label htmlFor='passwordTwo'>Powtórz hasło<br/>
                 </label>
                 <input
                     type="password"
@@ -94,6 +95,8 @@ function SignUpForm(props) {
                     onBlur={formik.handleBlur}
                     value={formik.values.passwordTwo}
                 />
+                {formik.errors.passwordTwo ? <span
+                    className='error'>{formik.errors.passwordTwo && formik.touched.passwordTwo && formik.errors.passwordTwo}</span> : ""}
 
                 <div className="form-btns">
                     <Link to={ROUTES.SIGN_IN}>

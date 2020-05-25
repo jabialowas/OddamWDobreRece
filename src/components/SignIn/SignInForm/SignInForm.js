@@ -45,10 +45,10 @@ function SignInForm(props) {
         },
     });
     return (
-        <div className='form'>
+        <div className='signIn-form'>
             <span className='error'>{authError ? "Email oraz hasło nie zgadzają się" : ''}</span>
             <form onSubmit={formik.handleSubmit}>
-                <label htmlFor='email'>Email<br/>{formik.errors.email ? <span className='error'>{formik.errors.email && formik.touched.email && formik.errors.email}</span> : "" }</label>
+                <label htmlFor='email'>Email</label>
                 <input
                     type="email"
                     id='email'
@@ -58,7 +58,9 @@ function SignInForm(props) {
                     value={formik.values.email}
                 />
 
-                <label htmlFor='password'>Hasło<br/>{formik.errors.password ? <span className='error'>{formik.errors.password && formik.touched.password && formik.errors.password}</span> : "" }</label>
+                    {formik.errors.email ? <span className='error'>{formik.errors.email && formik.touched.email && formik.errors.email}</span> : "" }
+
+            <label htmlFor='password'>Hasło</label>
                 <input
                     type="password"
                     id='password'
@@ -67,6 +69,7 @@ function SignInForm(props) {
                     onBlur={formik.handleBlur}
                     value={formik.values.passwordOne}
                 />
+               {formik.errors.password ? <span className='error'>{formik.errors.password && formik.touched.password && formik.errors.password}</span> : "" }
                 <div className="form-btns">
                     <Link to={ROUTES.SIGN_UP} ><button type='button' className='signUp-btn'>Zarejestruj </button></Link>
 

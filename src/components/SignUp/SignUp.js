@@ -15,7 +15,7 @@ import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 
 function SignUp() {
     return (
-        <div className='form-cnt'>
+        <div className='signUp-cnt'>
             <h2 className='form-title'>Załóż konto</h2>
             <Decoration/>
             <br/>

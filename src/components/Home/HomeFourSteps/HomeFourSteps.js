@@ -21,7 +21,7 @@ function HomeFourSteps(props) {
             <StepColumn icon='Icon-4.svg' title='Zamów kuriera' text='kurier przyjedzie w dogodnym terminie'/>
             </div>
             <div className='page-steps-btn'>
-                {authUser ? <Link to={ROUTES.APP_FORM}>ODDAJ<br/>RZECZY</Link>: <Link to={ROUTES.SIGN_IN}>ODDAJ<br/>RZECZY</Link>}
+                {authUser ? <Link to={ROUTES.APP_FORM}>ODDAJ<br/>RZECZY</Link> : <Link to={ROUTES.SIGN_IN}>ODDAJ<br/>RZECZY</Link>}
             </div>
         </div>}
         </AuthUserContext.Consumer>
