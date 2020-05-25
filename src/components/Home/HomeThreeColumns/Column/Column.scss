@@ -1,0 +1,39 @@
+@import 'src/scss/settings/colors';
+@import 'src/scss/settings/fonts';
+
+.column-cnt{
+  display: flex;
+  flex-direction: column;
+  width: 334px;
+  height: 252px;
+  align-items: center;
+  justify-content: space-between;
+
+  h2{
+    text-align: center;
+    font-family: $font-base;
+    letter-spacing: 0;
+    color: #5E5322;
+    opacity: 1;
+    font-weight: lighter;
+    font-size: 90px;
+  }
+  h5{
+    text-align: left;
+    font-family: $font-base;
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    color: #3C3C3C;
+    opacity: 1;
+    font-weight: normal;
+  }
+  p{
+    text-align: center;
+    font-size: 16px;
+    font-family: $font-alt;
+    letter-spacing: -0.32px;
+    color: #3C3C3C;
+    opacity: 1;
+    font-weight: lighter;
+  }
+}

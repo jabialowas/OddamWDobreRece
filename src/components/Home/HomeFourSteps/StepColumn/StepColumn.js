@@ -14,6 +14,7 @@ function StepColumn({icon,title,text}) {
             <hr/>
             <p>{text}</p>
         </div>
+
     );
 }
 

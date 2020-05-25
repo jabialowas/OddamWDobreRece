@@ -3,7 +3,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 150px;
+  text-align: center;
+  color: #3C3C3C;
+  img{
+    margin-bottom: 10px;
+  }
+  h4{
+    font-size: 18px ;
+    font-weight: normal;
+  }
 
-
+  p{
+    font-size: 16px;
+    font-weight: normal;
+  }
+  hr{
+    height: 1px;
+    width: 70px;
+    background-color: #3C3C3C;
+   margin: 10px 0;
+  }
 
 }
