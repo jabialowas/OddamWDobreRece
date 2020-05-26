@@ -1,6 +1,28 @@
 @import 'src/scss/settings/colors';
 @import 'src/scss/settings/fonts';
+@import 'src/scss/settings/colors';
+@import 'src/scss/settings/fonts';
 
+.signOut-cnt{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: calc(100vh - 300px);
+
+  .form-title{
+    font-size: 40px;
+    color: $font-color;
+    font-family: $font-base;
+    font-weight: normal;
+  }
+
+  svg{
+    display: inline-block;
+    margin: 40px 0;
+  }
+}
 button {
   background-color: Transparent;
   background-repeat: no-repeat;

@@ -9,6 +9,7 @@
   padding-right: 140px;
   margin-top: 40px;
 
+
   a {
     text-decoration: none;
   }
@@ -34,8 +35,11 @@
     }
   }
   .navbar-nav {
+
     font-size: 18px;
-    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     list-style-type: none;
     a,a:link, a:visited {
       color: $font-color;

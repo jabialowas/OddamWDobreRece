@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import './SignOut.scss'
+
 const SignOutButton = ({ firebase }) => (
     <li  onClick={firebase.doSignOut}>
         Wyloguj
@@ -13,7 +14,7 @@ const SignOutButton = ({ firebase }) => (
 
 export const SignOut = () => {
     return (
-        <div className='form-cnt'>
+        <div className='signOut-cnt'>
             <h2 className='form-title'>Wylogowanie nastąpiło pomyślnie!</h2>
             <Decoration/>
             <br/>
