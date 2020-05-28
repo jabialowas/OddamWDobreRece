@@ -46,7 +46,7 @@ function SignInForm(props) {
     });
     return (
         <div className='signIn-form'>
-            <span className='error'>{authError ? "Email oraz hasło nie zgadzają się" : ''}</span>
+            <span className='error-auth'>{authError ? "Email oraz hasło nie zgadzają się" : ''}</span>
             <form onSubmit={formik.handleSubmit}>
                 <label htmlFor='email'>Email</label>
                 <input

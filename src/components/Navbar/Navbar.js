@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, NavLink} from "react-router-dom";
+import {BrowserRouter as Router, NavLink, Link} from "react-router-dom";
 import {
-    Link,
+    Link as ScrollLink,
     DirectLink,
     Element,
     Events,
@@ -13,7 +13,8 @@ import './Navbar.scss'
 import * as ROUTES from '../../constants/routes'
 import SignOutButton from "../SignOut/SignOut";
 import {AuthUserContext} from '../Session'
-import WhoWeHelp from "../Home/HomeWhoWeHelp/HomeWhoWeHelp";
+import {LANDING} from "../../constants/routes";
+
 
 const activeStyle = {
 
@@ -27,23 +28,23 @@ const NavbarNonAuth = () => (
         </ul>
         <ul className='navbar-nav'>
             <li><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
-            <li><Link   to='fourSteps'
+            <li><ScrollLink   to='fourSteps'
                         spy={true}
                         smooth={true}
-                        duration={500}>O co chodzi?</Link></li>
-            <li><Link to='aboutUs'
+                        duration={500}>O co chodzi?</ScrollLink></li>
+            <li><ScrollLink  to='aboutUs'
                 spy={true}
                 smooth={true}
-                duration={500}>O nas</Link></li>
-            <li><Link
+                duration={500}>O nas</ScrollLink ></li>
+            <li><ScrollLink
                 to='whoWeHelp'
                 spy={true}
                 smooth={true}
-                duration={500}>Fundacja i organizacje</Link></li>
-            <li><Link to='contact'
+                duration={500}>Fundacja i organizacje</ScrollLink ></li>
+            <li><ScrollLink  to='contact'
                 spy={true}
                 smooth={true}
-                duration={500}>Kontakt</Link></li>
+                duration={500}>Kontakt</ScrollLink ></li>
         </ul>
         </>
 )
@@ -58,13 +59,26 @@ const NavbarAuth = ()=> (
             <li><NavLink className='register'to={ROUTES.APP_FORM}>Oddaj rzeczy</NavLink></li>
             <NavLink to={ROUTES.SIGN_OUT}>{<SignOutButton/>}</NavLink>
         </ul>
-        <ul className='navbar-nav'>
-            <li><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
-            <li><Link>O co chodzi?</Link></li>
-            <li><Link>O nas</Link></li>
-            <li><Link>Fundacja i organizacje</Link></li>
-            <li><Link>Kontakt</Link></li>
-        </ul>
+                <ul className='navbar-nav'>
+                    <li ><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
+                    <li ><ScrollLink   to='fourSteps'
+                                      spy={true}
+                                      smooth={true}
+                                      duration={500}>O co chodzi?</ScrollLink></li>
+                    <li><ScrollLink  to='aboutUs'
+                                     spy={true}
+                                     smooth={true}
+                                     duration={500}>O nas</ScrollLink ></li>
+                    <li><ScrollLink
+                        to='whoWeHelp'
+                        spy={true}
+                        smooth={true}
+                        duration={500}>Fundacja i organizacje</ScrollLink ></li>
+                    <li><ScrollLink  to='contact'
+                                     spy={true}
+                                     smooth={true}
+                                     duration={500}>Kontakt</ScrollLink ></li>
+                </ul>
             </>}
     </AuthUserContext.Consumer>
 

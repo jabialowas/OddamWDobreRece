@@ -14,6 +14,7 @@ import Navbar from "../Navbar";
 import * as ROUTES from '../../constants/routes'
 import {withAuthentication} from '../Session'
 import {SignOut} from "../SignOut/SignOut";
+import GiveThings from "../GiveThings";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                     <Route path={ROUTES.SIGN_IN} component={SignIn}/>
                     <Route path={ROUTES.SIGN_UP} component={SignUp} />
                     <Route path={ROUTES.SIGN_OUT} component={SignOut} />
+                    <Route path={ROUTES.APP_FORM} component={GiveThings}/>
                 </Switch>
             </Router>
         </>
