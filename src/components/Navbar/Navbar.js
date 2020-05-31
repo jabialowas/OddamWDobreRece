@@ -85,8 +85,10 @@ const NavbarAuth = ()=> (
 )
 const Navbar = () => (
 
-<div className='navbar'><AuthUserContext.Consumer>
-    {authUser => authUser  ?  <NavbarAuth /> : <NavbarNonAuth />}</AuthUserContext.Consumer>
+<div className='navbar'>
+    <AuthUserContext.Consumer>
+    {authUser => authUser  ?  <NavbarAuth /> : <NavbarNonAuth />}
+</AuthUserContext.Consumer>
 </div>
 )
 

@@ -1,19 +1,41 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import {withFirebase} from "../../../Firebase";
+import FormContext from "../../context";
+
 
 const Checkbox = ({type = 'checkbox', name, defaultChecked = false, onChange}) => (
     <input type={type} name={name} defaultChecked={defaultChecked} onChange={onChange}/>
 );
 
-function FormStep3({handleInput,handleArr, setStep, context}) {
+function FormStep3({handleInput,handleArr, setStep,firebase}) {
+    const context = useContext(FormContext);
     const [selectedLocalization, setSelectedLocalization] = useState(context.form.localization)
     const [helpGroups, setHelpGroups] = useState(context.form.helpGroups)
+    const [suggestArr, setSuggestArr] = useState(false)
+    const [selectedLocalizationSpecific, setSelectedLocalizationSpecific] = useState(context.form.localizationSpecific)
+
+
     useEffect(() => {
-        handleArr(helpGroups)
+        context.handleArr(helpGroups)
     }, [helpGroups])
+
+    useEffect(() => {
+        firebase.siteInfo().on('value', snapshot => {
+            setSuggestArr( Object.entries(snapshot.val()).map(category => category[1].map(item => item.name)).reduce((a,b) => a.concat(b), []) )
+        });
+    }, [])
+
+
+
+    const handleInputSelectLocalizationSpecific = e => {
+        setSelectedLocalizationSpecific(e.target.value)
+        context.handleInput(e)
+    };
+
 
     const handleSelectLocalization = e => {
         setSelectedLocalization(e.target.value)
-        handleInput(e)
+        context.handleInput(e)
     }
     const handleSelect = (e) => {
         const item = e.target.name
@@ -26,8 +48,7 @@ function FormStep3({handleInput,handleArr, setStep, context}) {
     return (
         <div>
 
-            <select name='localization' onChange={handleSelectLocalization} value={selectedLocalization}>
-
+            <select name='localization' disabled={selectedLocalizationSpecific.length > 0} onChange={handleSelectLocalization} value={selectedLocalization}>
                 <option value=''>-- wybierz --</option>
                 <option value='poznan'>Poznań</option>
                 <option value='warsaw'>Warszawa</option>
@@ -53,9 +74,11 @@ function FormStep3({handleInput,handleArr, setStep, context}) {
                 <Checkbox name='elder' defaultChecked={helpGroups.includes('elder')} onChange={handleSelect}/>
             </label>
 
-
-            <button onClick={() => setStep(prev => prev - 1)}>Wstecz</button>
-            <button onClick={() => setStep(prev => prev + 1)}>Next</button>
+            <label> locspec
+                <input type='text' value={selectedLocalizationSpecific} name='localizationSpecific' disabled={selectedLocalization.length > 0} onChange={handleInputSelectLocalizationSpecific}/>
+            </label>
+            <button onClick={ () => context.setStepDecrement()}>Wstecz</button>
+            <button onClick={ () => context.setStepIncrement()}>Next</button>
             <button onClick={() => alert(JSON.stringify(context))}>End</button>
 
 
@@ -63,4 +86,4 @@ function FormStep3({handleInput,handleArr, setStep, context}) {
     );
 }
 
-export default FormStep3;
+export default withFirebase(FormStep3);

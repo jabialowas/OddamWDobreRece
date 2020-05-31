@@ -9,18 +9,22 @@ const FormContext = React.createContext({
         helpGroups: [],
         localizationSpecific: '',
         userInfo: {
-            street: '',
+            address: '',
             city: '',
             postCode: '',
-            phone: '',
+            phoneNumber: '',
             date: '',
             time: '',
             note: '',
         }
     },
-    setForm: () => {
-        console.log(FormContext.form);
-    }
+    handleInput: () => {},
+    handleBagsSelect: () => {},
+    handleArr: () => {},
+    handleUserInfoInput: () => {},
+    setStepIncrement: () => {},
+    setStepDecrement: () => {},
+    step: 1
 });
 
 export const FormProvider = FormContext.Provider

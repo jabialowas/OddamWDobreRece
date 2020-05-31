@@ -29,7 +29,6 @@ function HomeWhoWeHelp(props) {
     function handleClickHeader(event) {
         setCategory(event.target.id);
         setCurrentPage(1)
-
     }
 
     if (data && !loading) {
@@ -52,9 +51,8 @@ function HomeWhoWeHelp(props) {
             {'id':'local', 'name': 'Lokalnym zbiórkom'}]
 
         const renderHeader = headersArr.map(el => {
-            const activeClass = classNames({
-                'header-item': true,
-                'active': category === el.id,
+            const activeClass = classNames(  'header-item',{
+                active: category === el.id,
             })
                     return  <li className={activeClass} id={el.id} onClick={handleClickHeader}>{el.name}</li>
         })
@@ -83,9 +81,8 @@ function HomeWhoWeHelp(props) {
         })
         //Render Pagination numbers
         const renderPageNumbers = pageNumbers.map((number, index) => {
-            const activeClass = classNames({
-                'page-numbers-item': true,
-                'active': number === +currentPage,
+            const activeClass = classNames('page-numbers-item',{
+                active: number === +currentPage,
             })
             return (
                 <li

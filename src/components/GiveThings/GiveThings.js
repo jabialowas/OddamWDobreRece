@@ -4,39 +4,69 @@ import FormContext from "./context";
 import MasterForm from "./MasterForm";
 import {FormProvider} from "./context";
 import {AuthUserContext} from "../Session";
+import GiveThingsHero from "./GiveThingsHero";
+import HomeContact from "../Home/HomeContact";
 
 
-function GiveThings(props) {
+function GiveThings() {
     const [formState, setFormState] = useState({
         form: {
-            type: 'unusableClothes',
-            bags: 1,
+            type: '',
+            bags: '',
             localization: '',
             helpGroups: [],
             localizationSpecific: '',
             userInfo: {
-                street: '',
+                address: '',
                 city: '',
                 postCode: '',
-                phone: '',
+                phoneNumber: '',
                 date: '',
                 time: '',
                 note: '',
             },
-            status: 'open'
         },
-        setForm: () => {
-            console.log(FormContext.form);
+        step: 1,
+        handleInput: (e) => {
+            let inputName = e.target.name
+            formState.form[inputName]= e.target.value;
+        },
+        handleBagsSelect: (e) => {
+            formState.form.bags= e;
+        },
+         handleArr: (arr) => {
+            formState.form.helpGroups = arr;
+        },
+         handleUserInfoInput: (e) => {
+            let inputName = e.target.name
+            formState.form.userInfo[inputName]= e.target.value;
+        },
+        setStepIncrement: () => {
+            setFormState( prev => (
+                {...prev, step: prev.step +1}
+            ));
+        },
+        setStepDecrement: () => {
+            setFormState( prev => (
+                {...prev, step: prev.step -1}
+            ));
         }
+
     })
+
     return (
+        <>
         <AuthUserContext.Consumer>
             {authUser =>
         <FormProvider value={formState} authUser={authUser}>
+
+            <GiveThingsHero/>
             <MasterForm/>
+            <HomeContact/>
         </FormProvider>
             }
         </AuthUserContext.Consumer>
+            </>
     );
 }
 

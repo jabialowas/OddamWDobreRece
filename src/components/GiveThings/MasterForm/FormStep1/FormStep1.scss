@@ -1,0 +1,106 @@
+.form1-cnt {
+  padding: 32px 0 73px 142px;
+  display: flex;
+  flex-direction: column;
+  height: 883px;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+
+  &:before{
+    content: '';
+    background: url("../../../../assets/Background-Form.jpg");
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    top: 0;
+    left: 0;
+background-position: center;
+  }
+  .step-text{
+    color: #3C3C3C;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 70px;
+
+  }
+  button{
+    display: inline-block;
+    padding: 23px 63px;
+    font-size: 24px;
+    font-weight: lighter;
+    color:#000000;
+    border: 0.75px solid #3C3C3C;
+    margin-top: 158px;
+  }
+  .form1-radioButton {
+
+    margin-top: 40px;
+
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
+      position: absolute;
+      left: -9999px;
+
+    }
+
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label {
+      position: relative;
+      padding-left: 60px;
+      cursor: pointer;
+      line-height: 20px;
+      color: #000000;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border: 0.75px solid #3C3C3C;
+      background: transparent;
+    }
+
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: #FAD648;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      z-index: -1;
+    }
+
+    [type="radio"]:not(:checked) + label:after {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+
+    [type="radio"]:checked + label:after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+.error-text{
+  color: red;
+  margin-left: 40px;
+  font-weight: bold;
+
+}
+}

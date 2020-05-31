@@ -1,40 +1,55 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import FormContext from "../context";
 import FormStep1 from "./FormStep1";
 import FormStep2 from "./FormStep2";
 import FormStep3 from "./FormStep3";
+import FormStep4 from "./FormStep4";
+import FormSummary from "./FormSummary";
+import {AuthUserContext} from "../../Session";
+import GiveThingsHero from "../GiveThingsHero";
+import '../GiveThings.scss'
+import FormAlert from "./FormAlert";
 
 
 function MasterForm() {
-   const [step,setStep] = useState(3);
     const context = useContext(FormContext);
 
-
-    const handleArr = (arr) => {
-        context.form.helpGroups = arr;
-    }
-
-    const handleInput = (e) => {
-        let inputName = e.target.name
-        context.form[inputName]= e.target.value;
-        console.log(context);
-
-    }
 const GetForm = () => {
-    switch(step){
-        case 1: return <FormStep1 setStep={setStep} handleInput={e => handleInput(e)} context={context}/>
-        case 2: return <FormStep2 setStep={setStep} handleInput={e => handleInput(e)} context={context}/>
-        case 3: return <FormStep3 setStep={setStep} handleInput={e => handleInput(e)} handleArr={e => handleArr(e)} context={context}/>
-        case 4: return <FormStep2 setStep={setStep} handleInput={e => handleInput(e)} context={context}/>
-        case 5: return <FormStep2 setStep={setStep} handleInput={e => handleInput(e)} context={context}/>
-        case 6: return <FormStep2 setStep={setStep} handleInput={e => handleInput(e)} context={context}/>
+    switch(context.step){
+        case 1: return (
+            <>
+            <FormAlert text='Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.'/>
+            <FormStep1 />
+            </>
+        )
+        case 2: return (
+            <>
+                <FormAlert text={['Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz ',
+                    <a href="">TUTAJ.</a>]}/>
+                    <FormStep2 />
+                    </>)
+        case 3: return (
+            <>
+                    <FormAlert text='Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.'/>
+                        <FormStep3 />
+                        </>)
+        case 4: return (
+            <>
+                        <FormAlert text='Podaj adres oraz termin odbioru rzeczy.'/>
+                            <FormStep4 />
+                            </>)
+        case 5: return (
+            <AuthUserContext.Consumer>
+                {authUser => <FormSummary  authUser={authUser}/>}
+            </AuthUserContext.Consumer>
+        )
+        case 6: return <FormStep2 />
     }
 }
     return (
         <>
-        <span> {context.form.type} {context.form.bags}</span>
-          <GetForm/>
-            </>
+        <GetForm />
+        </>
     );
 }
 
