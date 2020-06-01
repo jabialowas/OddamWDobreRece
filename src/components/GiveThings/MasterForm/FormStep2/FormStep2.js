@@ -25,7 +25,7 @@ function FormStep2() {
 
             width: '80px',
             border: '0.75px solid #3C3C3C',
-            background: 'none',
+            background: '#E8E9E4',
             boxShadow: 'none',
             position: 'absolute',
             left: '220px',
@@ -38,7 +38,8 @@ function FormStep2() {
             padding: '6px 36px',
             width: '100%',
             '&:hover': {
-                backgroundColor: '#FAD648'
+                backgroundColor: '#FAD648',
+                cursor: 'pointer'
             }
         }),
         control: (_, {selectProps: {width}}) => ({
@@ -46,9 +47,11 @@ function FormStep2() {
             border: '0.75px solid black',
             display: "flex",
             position: 'relative',
+            cursor: 'pointer',
 
             '&:hover': {
-                backgroundColor: '#FAD648'
+                backgroundColor: '#FAD648',
+                cursor: 'pointer'
             }
 
         }),

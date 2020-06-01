@@ -1,0 +1,114 @@
+.form4-cnt {
+  padding: 32px 0 73px 142px;
+  display: flex;
+  flex-direction: column;
+  height: 883px;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    background: url("../../../../assets/Background-Form.jpg") no-repeat center;
+  }
+
+
+  .step-text {
+    color: #3C3C3C;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 70px;
+
+  }
+
+  .step-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .form4-text {
+    color: #3C3C3C;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+
+  }
+
+  .input-group-cnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .input-title{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      display: flex;
+      width: 400px;
+      height: 320px;
+      flex-direction: column;
+      margin-right: 150px;
+
+      label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      input {
+        background: none;
+        border: 0.75px solid #3C3C3C;
+        outline: none;
+        width: 256px;
+        font-size: 16px;
+        font-weight: lighter;
+        padding: 5px 10px;
+
+      }
+      .note-input{
+        height: 120px;
+        width: 380px;
+        background: none;
+        border: 0.75px solid #3C3C3C;
+        outline: none;
+        font-size: 16px;
+        font-weight: lighter;
+        padding: 5px 10px;
+        resize:none
+
+      }
+    }
+  }
+
+  .form-btns {
+    margin-top: 166px;
+
+    button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 23px 63px;
+      font-size: 24px;
+      font-weight: lighter;
+      color: #000000;
+      border: 0.75px solid #3C3C3C;
+      max-width: 180px;
+      margin-right: 50px;
+      text-align: center;
+    }
+
+    .error-text {
+      color: red;
+      font-weight: bold;
+    }
+  }
+}

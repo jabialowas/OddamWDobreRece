@@ -15,13 +15,25 @@ import * as ROUTES from '../../constants/routes'
 import {withAuthentication} from '../Session'
 import {SignOut} from "../SignOut/SignOut";
 import GiveThings from "../GiveThings";
+import { useLocation } from "react-router-dom";
 
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
 
 function App() {
     return (
         <>
 
             <Router>
+                <ScrollToTop/>
                 <Navbar/>
                 <Switch>
                     <Route exact path={ROUTES.LANDING} component={Home} />

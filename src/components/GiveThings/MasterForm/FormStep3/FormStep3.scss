@@ -1,0 +1,105 @@
+.form3-cnt {
+  padding: 32px 0 73px 142px;
+  display: flex;
+  flex-direction: column;
+  height: 883px;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    background: url("../../../../assets/Background-Form.jpg") no-repeat center;
+  }
+
+
+  .step-text {
+    color: #3C3C3C;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 70px;
+
+  }
+  
+  .step-title{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .form3-text{
+    color: #3C3C3C;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    
+  }
+
+  .customInput{
+    background: none;
+    border: 0.75px solid #3C3C3C;
+    outline: none ;
+    width: 570px;
+    font-size: 24px;
+    font-weight: lighter;
+    padding: 5px 10px;
+  }
+
+  .form3-checkbox-cnt {
+    width: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    [type="checkbox"] {
+      display: none;
+
+      + label {
+        display: inline-block;
+        padding: 11px 26px;
+        border: 0.75px solid #3C3C3C;
+        margin-right: 25px;
+        margin-bottom: 20px;
+      }
+
+      &:hover + label {
+        cursor: pointer;
+        background: #eedeaf;
+      }
+
+      &:checked + label {
+        background: #fad648;
+
+      }
+    }
+  }
+
+  .form-btns {
+
+    margin-top: 62px;
+
+    button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 23px 63px;
+      font-size: 24px;
+      font-weight: lighter;
+      color: #000000;
+      border: 0.75px solid #3C3C3C;
+      max-width: 180px;
+      margin-right: 50px;
+      text-align: center;
+    }
+    .error-text {
+      color: red;
+      font-weight: bold;
+    }
+  }
+}

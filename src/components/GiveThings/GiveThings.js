@@ -26,13 +26,16 @@ function GiveThings() {
                 note: '',
             },
         },
-        step: 1,
+        step: 5,
         handleInput: (e) => {
             let inputName = e.target.name
             formState.form[inputName]= e.target.value;
         },
         handleBagsSelect: (e) => {
             formState.form.bags= e;
+        },
+        handleLocalizationSelect: (e) => {
+            formState.form.localization= e;
         },
          handleArr: (arr) => {
             formState.form.helpGroups = arr;
