@@ -28,7 +28,7 @@ function GiveThings() {
                 note: '',
             },
         },
-        step: 5,
+        step: 1,
     }
     const [formState, setFormState] = useState({
             ...INITIAL_VALUE,
