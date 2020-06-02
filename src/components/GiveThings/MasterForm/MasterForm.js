@@ -9,6 +9,7 @@ import {AuthUserContext} from "../../Session";
 import GiveThingsHero from "../GiveThingsHero";
 import '../GiveThings.scss'
 import FormAlert from "./FormAlert";
+import FormThanks from "./FormThanks";
 
 
 function MasterForm() {
@@ -43,7 +44,7 @@ const GetForm = () => {
                 {authUser => <FormSummary  authUser={authUser}/>}
             </AuthUserContext.Consumer>
         )
-        case 6: return <FormStep2 />
+        case 6: return <FormThanks />
     }
 }
     return (

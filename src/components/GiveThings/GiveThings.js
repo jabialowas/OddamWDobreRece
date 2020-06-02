@@ -6,10 +6,12 @@ import {FormProvider} from "./context";
 import {AuthUserContext} from "../Session";
 import GiveThingsHero from "./GiveThingsHero";
 import HomeContact from "../Home/HomeContact";
+import {Form} from "formik";
 
 
 function GiveThings() {
-    const [formState, setFormState] = useState({
+
+    const INITIAL_VALUE= {
         form: {
             type: '',
             bags: '',
@@ -27,6 +29,9 @@ function GiveThings() {
             },
         },
         step: 5,
+    }
+    const [formState, setFormState] = useState({
+            ...INITIAL_VALUE,
         handleInput: (e) => {
             let inputName = e.target.name
             formState.form[inputName]= e.target.value;
@@ -56,6 +61,7 @@ function GiveThings() {
         }
 
     })
+
 
     return (
         <>

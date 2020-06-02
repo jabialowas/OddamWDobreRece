@@ -63,14 +63,14 @@ function FormSummary({authUser}) {
 
     const handleSubmit = () => {
 
-        // const data = context.form
-        // firebase.database().ref('orders/' + authUser.uid + data.userInfo.time).set({
-        //     userId: authUser.uid,
-        //     email: authUser.email,
-        //     orderInfo: data,
-        //     status: 'open'
-        //
-        // })
+        const data = context.form
+        firebase.database().ref('orders/' + authUser.uid + data.userInfo.time).set({
+            userId: authUser.uid,
+            email: authUser.email,
+            orderInfo: data,
+            status: 'open'
+
+        })
         context.setStepIncrement();
     }
     return (
