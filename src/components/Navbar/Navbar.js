@@ -48,23 +48,22 @@ const NavbarNonAuth = () => (
         </ul>
         </>
 )
-
-const NavbarAuth = ()=> (
-
+const NavbarAuthAdmin = () => (
     <AuthUserContext.Consumer>
         {authUser =>
             <>
-        <ul className='navbar-login'>
-            <li>Witaj {authUser.email}</li>
-            <li><NavLink className='register'to={ROUTES.APP_FORM}>Oddaj rzeczy</NavLink></li>
-            <NavLink to={ROUTES.SIGN_OUT}>{<SignOutButton/>}</NavLink>
-        </ul>
+                <ul className='navbar-login'>
+                    <li>Witaj {authUser.email}</li>
+                    <li><NavLink className='register'to={ROUTES.APP_FORM}>Oddaj rzeczy</NavLink></li>
+                    <li><NavLink className='register'to={ROUTES.ADMIN}>Panel</NavLink></li>
+                    <NavLink to={ROUTES.SIGN_OUT}>{<SignOutButton/>}</NavLink>
+                </ul>
                 <ul className='navbar-nav'>
                     <li ><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
                     <li ><ScrollLink   to='fourSteps'
-                                      spy={true}
-                                      smooth={true}
-                                      duration={500}>O co chodzi?</ScrollLink></li>
+                                       spy={true}
+                                       smooth={true}
+                                       duration={500}>O co chodzi?</ScrollLink></li>
                     <li><ScrollLink  to='aboutUs'
                                      spy={true}
                                      smooth={true}
@@ -81,10 +80,46 @@ const NavbarAuth = ()=> (
                 </ul>
             </>}
     </AuthUserContext.Consumer>
+            )
 
+const NavbarAuthUser = () => (
+    <AuthUserContext.Consumer>
+        {authUser =>
+            <>
+                <ul className='navbar-login'>
+                    <li>Witaj {authUser.email}</li>
+                    <li><NavLink className='register'to={ROUTES.APP_FORM}>Oddaj rzeczy</NavLink></li>
+                    <NavLink to={ROUTES.SIGN_OUT}>{<SignOutButton/>}</NavLink>
+                </ul>
+                <ul className='navbar-nav'>
+                    <li ><NavLink activeStyle={activeStyle} to={ROUTES.LANDING}>Start</NavLink></li>
+                    <li ><ScrollLink   to='fourSteps'
+                                       spy={true}
+                                       smooth={true}
+                                       duration={500}>O co chodzi?</ScrollLink></li>
+                    <li><ScrollLink  to='aboutUs'
+                                     spy={true}
+                                     smooth={true}
+                                     duration={500}>O nas</ScrollLink ></li>
+                    <li><ScrollLink
+                        to='whoWeHelp'
+                        spy={true}
+                        smooth={true}
+                        duration={500}>Fundacja i organizacje</ScrollLink ></li>
+                    <li><ScrollLink  to='contact'
+                                     spy={true}
+                                     smooth={true}
+                                     duration={500}>Kontakt</ScrollLink ></li>
+                </ul>
+            </>}
+    </AuthUserContext.Consumer>
+)
+const NavbarAuth = ()=> (
+    <AuthUserContext.Consumer>
+    {authUser => authUser.roles['ADMIN'] === 'ADMIN' ? <NavbarAuthAdmin/> : <NavbarAuthUser/>}
+    </AuthUserContext.Consumer>
 )
 const Navbar = () => (
-
 <div className='navbar'>
     <AuthUserContext.Consumer>
     {authUser => authUser  ?  <NavbarAuth /> : <NavbarNonAuth />}

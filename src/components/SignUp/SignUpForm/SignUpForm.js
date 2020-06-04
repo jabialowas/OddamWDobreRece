@@ -4,6 +4,7 @@ import Firebase from "../../Firebase";
 import * as ROUTES from '../../../constants/routes'
 import {Link, withRouter} from 'react-router-dom';
 import "./SignUpForm.scss"
+import * as ROLES from "../../../constants/roles";
 
 const validate = values => {
         const errors = {};
@@ -29,6 +30,7 @@ const INITIAL_STATE = {
     email: '',
     passwordOne: '',
     passwordTwo: '',
+    isAdmin: false,
 }
 
 function SignUpForm(props) {
@@ -38,7 +40,14 @@ function SignUpForm(props) {
         },
         validate,
         onSubmit: (values, event) => {
+            const roles = {};
 
+            if (values.isAdmin) {
+                roles[ROLES.ADMIN] = ROLES.ADMIN;
+            } else if (!values.isAdmin){
+                roles[ROLES.ADMIN] = "USER";
+
+            }
             props.firebase
                 .doCreateUserWithEmailAndPassword(values.email, values.passwordOne)
                 .then(authUser => {
@@ -46,7 +55,8 @@ function SignUpForm(props) {
                     return props.firebase
                         .user(authUser.user.uid)
                         .set({
-                            email
+                            email,
+                            roles
                         });
                 })
                     .then(()=>{

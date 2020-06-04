@@ -64,9 +64,10 @@ function FormSummary({authUser}) {
     const handleSubmit = () => {
 
         const data = context.form
-        firebase.database().ref('orders/' + authUser.uid + data.userInfo.time).set({
+        firebase.database().ref('orders/' + authUser.uid + data.userInfo.time + data.userInfo.date ).set({
             userId: authUser.uid,
             email: authUser.email,
+            orderId: authUser.uid + data.userInfo.time + data.userInfo.date,
             orderInfo: data,
             status: 'open'
 

@@ -19,6 +19,7 @@ function HomeWhoWeHelp(props) {
         props.firebase.siteInfo().on('value', snapshot => {
             setData(snapshot.val());
             setLoading(false);
+
         });
     }, [])
 
@@ -32,6 +33,7 @@ function HomeWhoWeHelp(props) {
     }
 
     if (data && !loading) {
+        console.log(data);
         let categoryData;
         if (category === 'foundations') {
             categoryData = data.foundations
@@ -43,7 +45,7 @@ function HomeWhoWeHelp(props) {
 
         const lastPost = currentPage * postPerPage;
         const firstPost = lastPost - postPerPage;
-        const currentPosts = categoryData.slice(firstPost, lastPost)
+        const currentPosts = Object.keys(categoryData).map(el => categoryData[el]).slice(firstPost, lastPost)
 
         const headersArr = [
             {'id':'foundations','name': 'Fundacjom'},
@@ -58,17 +60,17 @@ function HomeWhoWeHelp(props) {
         })
 
 
-        //page numbers
+        // page numbers
         const pageNumbers = [];
-        for (let i = 0; i < Math.ceil(categoryData.length / postPerPage); i++) {
+        for (let i = 0; i < Math.ceil(Object.keys(categoryData).map(el => categoryData[el]).length / postPerPage); i++) {
             pageNumbers.push(i + 1)
         }
 
 
-        //Render posts
+        // Render posts
         const renderPosts = currentPosts.map((post, index) => {
             return (<>
-                    <li key={index}><h3 className='who-name'>{post.name}</h3>
+                    <li key={post.name}><h3 className='who-name'>{post.name}</h3>
                         <div className='who-disc-cnt'>
                             <p className='who-description'>{post.description}</p>
                             <p className='who-needs'>{post.needs}</p>
@@ -79,7 +81,7 @@ function HomeWhoWeHelp(props) {
             )
 
         })
-        //Render Pagination numbers
+        // Render Pagination numbers
         const renderPageNumbers = pageNumbers.map((number, index) => {
             const activeClass = classNames('page-numbers-item',{
                 active: number === +currentPage,

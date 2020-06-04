@@ -28,11 +28,49 @@ class Firebase {
 
     doSignOut = () => this.auth.signOut();
 
+    onAuthUserListener = (next, fallback) =>
+        this.auth.onAuthStateChanged(authUser => {
+            if (authUser) {
+                this.user(authUser.uid)
+                    .once('value')
+                    .then(snapshot => {
+                        const dbUser = snapshot.val();
+
+                        // default empty roles
+                        if (!dbUser.roles) {
+                            dbUser.roles = {};
+                        }
+
+                        // merge auth and db user
+                        authUser = {
+                            uid: authUser.uid,
+                            email: authUser.email,
+                            ...dbUser,
+                        };
+
+                        next(authUser);
+                    });
+            } else {
+                fallback();
+            }
+        });
+
+
     user = uid => this.db.ref(`users/${uid}`);
     users=() => this.db.ref('users');
+
     orders = () => this.db.ref('orders')
+    order = uid => this.db.ref(`orders/${uid}`)
 
     siteInfo = () => this.db.ref('siteInfo');
+    foundations = () => this.db.ref('siteInfo/foundations');
+    foundationsItem = name => this.db.ref(`siteInfo/foundations/${name}`);
+
+    organizations = () => this.db.ref('siteInfo/organizations');
+    organizationsItem = name => this.db.ref(`siteInfo/organizations/${name}`);
+
+    local = () => this.db.ref('siteInfo/local');
+    localItem = name => this.db.ref(`siteInfo/local/${name}`);
 }
 
 export default Firebase;

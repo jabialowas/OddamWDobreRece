@@ -57,6 +57,7 @@ function HomeThreeColums(props) {
             setLoading(false);
 
         });
+        return () => props.firebase.orders().off();
     }, [])
 
     return (

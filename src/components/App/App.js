@@ -16,6 +16,8 @@ import {withAuthentication} from '../Session'
 import {SignOut} from "../SignOut/SignOut";
 import GiveThings from "../GiveThings";
 import { useLocation } from "react-router-dom";
+import AdminPage from "../Admin/Admin";
+import Orders from "../Orders/Orders";
 
 
 function ScrollToTop() {
@@ -31,7 +33,6 @@ function ScrollToTop() {
 function App() {
     return (
         <>
-
             <Router>
                 <ScrollToTop/>
                 <Navbar/>
@@ -41,6 +42,7 @@ function App() {
                     <Route path={ROUTES.SIGN_UP} component={SignUp} />
                     <Route path={ROUTES.SIGN_OUT} component={SignOut} />
                     <Route path={ROUTES.APP_FORM} component={GiveThings}/>
+                    <Route path={ROUTES.ADMIN} component={AdminPage}/>
                 </Switch>
             </Router>
         </>
