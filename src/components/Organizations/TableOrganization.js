@@ -93,11 +93,16 @@ const TableOrganization = props => {
     const useStyles = makeStyles({
         table: {
             minWidth: 650,
-            maxWidth: 1600,
+            maxWidth: 1920,
+            marginBottom: 40,
+            marginTop: 40,
 
         },
         tableHead: {
             background: 'rgba(127,232,255,0.54)'
+        },
+        addRow: {
+            background: 'rgb(122,243,148)'
         }
     });
     const classes = useStyles();
@@ -106,7 +111,7 @@ const TableOrganization = props => {
     return (
         <>
             <TableContainer>
-                <Table>
+                <Table className={classes.table}>
                     <TableHead className={classes.tableHead}>
                         <TableRow>
                             <TableCell>{props.title}</TableCell>
@@ -139,7 +144,10 @@ const TableOrganization = props => {
                                 </TableRow>
                             </>
                         ))}
-                        <TableRow>
+                        <TableRow className={classes.addRow}>
+                            <TableCell>Dodaj nowy</TableCell>
+                        </TableRow>
+                        <TableRow className={classes.addRow}>
                             <TableCell><TextField label="Nazwa" value={name} onChange={handleNameChange}/></TableCell>
                             <TableCell><TextField label="Opis" value={description} onChange={handleDescriptionChange}/></TableCell>
                             <TableCell><TextField label="Potrzeby" value={needs} onChange={handleNeedsChange}/></TableCell>

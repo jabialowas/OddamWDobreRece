@@ -23,11 +23,6 @@ function FormStep3({handleInput, handleArr, setStep, firebase}) {
         context.handleArr(helpGroups)
     }, [helpGroups])
 
-    useEffect(() => {
-        firebase.siteInfo().on('value', snapshot => {
-            setSuggestArr(Object.entries(snapshot.val()).map(category => category[1].map(item => item.name)).reduce((a, b) => a.concat(b), []))
-        });
-    }, [])
 
     const handleInputSelectLocalizationSpecific = e => {
         setSelectedLocalizationSpecific(e.target.value)

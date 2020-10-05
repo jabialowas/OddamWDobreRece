@@ -25,8 +25,7 @@ function Organizations(props) {
         }
 
     }, [])
-
-    console.log(organizations.local);
+    console.log(organizations)
 
     if (organizations) {
         return (
@@ -36,6 +35,9 @@ function Organizations(props) {
                 <TableOrganization type={organizations.organizations} title='Organizacje' key='Organizacje'/>
             </Container>
         );
+    } else if (organizations === null)
+    {
+
     }
     return null;
 
